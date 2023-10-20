@@ -57,6 +57,7 @@ body {
 /* стрелочка на глаавный экран */
 .container1 {
     position:relative;
-    left:1130px;
+    left:850px;
     top:-15px;
 }
+

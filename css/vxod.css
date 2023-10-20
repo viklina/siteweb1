@@ -1,0 +1,73 @@
+body {
+	font-family: 'Open Sans', sans-serif; /* стиль шрифта */
+	margin: 0;
+}
+
+.menu1 { /* расположение слов меню */
+	margin-top: -100px;
+	vertical-align:super;
+	font-size:smaller;
+	display: flex;
+	align-items: center;
+	margin-left: 1000px;
+	gap: 31px;
+}
+
+.voiti { /* стиль слов меню */
+	color: #9FA8DA;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
+	position: relative;
+}
+/* окно войти */
+.registr {
+	background-image: url(registr.jpg);
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center;
+}
+/* расположение полей регистрации */
+form input {
+	display: block;
+	margin-bottom: 20px;
+	border: 1px solid #E5E9F5;
+	background-color: white;
+	padding: 15px;
+	margin-top: 11px;
+	border: none;
+	border-color: transparent;
+}
+.knopka {
+	margin-top: -100px;
+	border: none;
+	font-size: 110%;
+	background-color: #FF73B3;
+	margin-left: 450px;
+
+}
+input:focus {
+	outline: none; /*  чтобы при клике на окно не было рамки */
+}
+#knopka1 button {
+	border: none;
+	font-size: 110%;
+	background-color: #FF73B3;
+	margin-left: 480px;
+
+}
+
+#knopka1:hover {
+	cursor: pointer;
+}
+
+#submit {
+	color: white;
+	margin-top: 45px;
+}
+#sign-up-container {
+	margin-top: -620px;
+	margin-left: 320px;
+}
