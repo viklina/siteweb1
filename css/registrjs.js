@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var userInfo = "Имя: " + name + ", Почта: " + mail + ", Пароль: " + password + " || Вы зарегистрированы!";
             console.log(userInfo);
         
-            fetch('/register', {
+            fetch('http://localhost:3000/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
