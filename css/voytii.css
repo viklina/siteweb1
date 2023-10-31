@@ -1,0 +1,51 @@
+.sign {
+	background-image: url(vxod.jpg);
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+/* расположение полей регистрации */
+form input {
+	display: block;
+	margin-bottom: 20px;
+	border: 1px solid #E5E9F5;
+	background-color: white;
+	padding: 15px;
+	margin-top: 11px;
+	border: none;
+	border-color: transparent;
+}
+
+.knopka2 {
+	margin-top: -100px;
+	border: none;
+	font-size: 110%;
+	background-color: #FF73B3;
+	margin-left: 450px;
+}
+
+input:focus {
+	outline: none; /*  чтобы при клике на окно не было рамки */
+}
+
+#knopka2 button {
+	border: none;
+	font-size: 110%;
+	background-color: #FF73B3;
+	margin-left: 480px;
+}
+
+#knopka2:hover {
+	cursor: pointer;
+}
+
+#submit1 {
+	color: white;
+	margin-top: 78px;
+}
+
+#sign-up-container {
+	margin-top: -620px;
+	margin-left: 320px;
+}
