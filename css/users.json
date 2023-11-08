@@ -8,5 +8,25 @@
     "name": "Вероника",
     "mail": "2@gmail.com",
     "password": "2121"
+  },
+  {
+    "name": "Анна",
+    "mail": "1111",
+    "password": "1111"
+  },
+  {
+    "name": "Тимофей",
+    "mail": "222",
+    "password": "222"
+  },
+  {
+    "name": "111",
+    "mail": "11111",
+    "password": "12"
+  },
+  {
+    "name": "111",
+    "mail": "11111",
+    "password": "12"
   }
 ]
