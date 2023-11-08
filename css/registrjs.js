@@ -1,4 +1,6 @@
+console.log('loaded');
 document.addEventListener("DOMContentLoaded", function () {
+    
     document.getElementById("knopka1").addEventListener("click", function (event) {
         event.preventDefault();
         var name = document.getElementById("name").value;
@@ -35,8 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    document.getElementById("knopka2").addEventListener("click", function (event) {
+    document.querySelector("#knopka2").addEventListener("click", function (event) {
         event.preventDefault();
+        console.log("Заполните все поля для входа");
 
         var mail = document.getElementById("mail1").value;
         var password = document.getElementById("parol").value;

@@ -4,22 +4,27 @@ const cors = require('cors');
 const fs = require('fs');
 const app = express();
 const jwt = require('jsonwebtoken');
+const path = require('path');
 
 const PORT = 3000;
 
 app.use(express.json());
 app.use(cors());
-app.use('/css', express.static(site + '/css'));
-app.use('/images', express.static(site + '/images'));
+
+const sitePath = path.join(__dirname,'C:/Users/vikap/Documents/GitHub/siteweb2')
+
+app.use('/css', express.static(path.join(sitePath, 'css')));
+app.use('/images', express.static(path.join(sitePath, 'images')));
 
 app.get('/', (req, res) => {
-    res.sendFile('site' + '/index.html');
+    res.sendFile(path.join(sitePath, 'index.html'));
 });
 
-//app.use((req, res, next) => {
-    //res.setHeader('Content-Security-Policy', "default-src 'self' img-src 'self'");
-    //next();
-//});
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "default-src 'self'; img-src * data:https://github.com/viklina/siteweb1.git");
+    next();
+});
+
 
 app.post('/register', (req, res) => {
     const { name, mail, password } = req.body;
