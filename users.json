@@ -1,7 +1,17 @@
 [
   {
-    "name": "123",
-    "mail": "123",
-    "password": "123"
+    "name": "Денис",
+    "mail": "webtehnologi@gmail.com",
+    "password": "CIS27plethud"
+  },
+  {
+    "name": "Виктория",
+    "mail": "vp@vp",
+    "password": "111111a"
+  },
+  {
+    "name": "Полина",
+    "mail": "ph@ph",
+    "password": "111111b"
   }
 ]

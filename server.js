@@ -34,32 +34,83 @@ app.post('/register', (req, res) => {
         fs.writeFileSync('users.json', '[]'); // Создание пустого массива, если файл не существует
     }
 
-    let users = JSON.parse(fs.readFileSync('users.json'));
+    fs.readFile('users.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
 
-    // Добавление нового пользователя
-    users.push(newUser);
+        let existingUsers = JSON.parse(data);
 
-    // Запись обновленных данных в файл users.json
-    fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
+        // Проверка пароля
+        if (password.length < 5 || !/[a-zA-Z]/.test(password) || !/\d/.test(password)) {
+            return res.status(400).json({ message: 'Пароль должен содержать не менее 5 символов, включая буквы и цифры.' });
+        }
 
-    res.json({ message: 'Пользователь зарегистрирован' });
+        // Проверка почты
+        if (!mail.includes("@")) {
+            return res.status(400).json({ message: 'Некорректный адрес электронной почты.' });
+        }
+
+        // Проверка уникальности почты
+        if (existingUsers.some(user => user.mail === mail)) {
+            return res.status(400).json({ message: 'Такая почта уже занята.' });
+        }
+
+        // Проверка уникальности пароля
+        if (existingUsers.some(user => user.password === password)) {
+            return res.status(400).json({ message: 'Такой пароль уже занят.' });
+        }
+
+        // Добавление нового пользователя
+        existingUsers.push(newUser);
+
+        // Запись обновленных данных в файл users.json
+        fs.writeFile('users.json', JSON.stringify(existingUsers, null, 2), (err) => {
+            if (err) {
+                console.error(err);
+                return res.status(500).json({ message: 'Ошибка сервера' });
+            }
+
+            res.json({ message: 'Пользователь зарегистрирован' });
+        });
+    });
 });
+
 
 app.post('/login', (req, res) => {
     const { mail, password } = req.body;
+    console.log('Вход: ', mail, password); // добавьте вывод в консоль
 
-    let users = JSON.parse(fs.readFileSync('users.json'));
+    fs.readFile('users.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
 
-    const user = users.find((user) => user.mail === mail && user.password === password);
+        let users = JSON.parse(data);
 
-    if (user) {
-        const token = jwt.sign({ user }, 'your_secret_key'); // Создание токена
+        const user = users.find((user) => user.mail === mail && user.password === password);
+        console.log('Найденный пользователь: ', user); // добавьте вывод в консоль
 
-        res.json({ token }); // Отправка токена клиенту
-    } else {
-        res.status(401).json({ message: 'Ошибка аутентификации' });
-    }
+        if (user) {
+            const token = jwt.sign({ user }, 'your_secret_key'); // Создание токена
+            console.log('Токен: ', token); // добавьте вывод в консоль
+            // Добавляем условие для перенаправления в зависимости от имени и почты
+            if (user.name === 'Денис' && user.mail === 'webtehnologi@gmail.com' && user.password === 'CIS27plethud') {
+                console.log('Пользователь Денис, перенаправляем на zakas.html');
+                res.json({ token, redirect: 'zakas.html' });
+            } else {
+                console.log('Пользователь не Денис, перенаправляем на profil.html');
+                res.json({ token, redirect: 'profil.html' });
+            }
+        } else {
+            res.status(401).json({ message: 'Ошибка аутентификации' });
+        }
+    });
 });
+
+
 // Пример middleware для проверки токена при запросах, требующих аутентификации
 function verifyToken(req, res, next) {
     const token = req.headers['authorization'];

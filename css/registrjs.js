@@ -1,6 +1,4 @@
-console.log('loaded');
 document.addEventListener("DOMContentLoaded", function () {
-    
     document.getElementById("knopka1").addEventListener("click", function (event) {
         event.preventDefault();
         var name = document.getElementById("name").value;
@@ -32,39 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         // Здесь можете выполнить дополнительные действия после регистрации
                         console.log("Пользователь зарегистрирован успешно!");
                     }
-                })
-                .catch(error => console.error('Ошибка:', error));
-        }
-    });
-
-    document.querySelector("#knopka2").addEventListener("click", function (event) {
-        event.preventDefault();
-        console.log("Заполните все поля для входа");
-
-        var mail = document.getElementById("mail1").value;
-        var password = document.getElementById("parol").value;
-
-        if (mail === "" || password === "") {
-            console.log("Заполните все поля для входа");
-        } else {
-            fetch('http://localhost:3000/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ mail, password })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data); // Вывод ответа от сервера
                     if (data.token) {
-                        localStorage.setItem('token', data.token); // Сохранение токена в localStorage
-                        console.log("Успешный вход!");
-                    } else {
-                        console.log("Ошибка входа, проверьте правильность введенных данных");
+                        console.log("Токен:", data.token);
                     }
                 })
                 .catch(error => console.error('Ошибка:', error));
         }
+       
     });
+
 });
