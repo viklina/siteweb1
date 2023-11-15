@@ -10,3 +10,55 @@
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
+#editorForm {
+    max-width: 1120px; /* Максимальная ширина формы */
+    margin: 20px auto; /* Центрирование формы по горизонтали */
+    margin-top: -3415px;
+}
+
+label {
+    display: block;
+    font-weight: bold; /* Жирный текст для меток */
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px;
+    box-sizing: border-box; /* Учтите padding внутри ширины элемента */
+    border: 1px solid #ccc; /* Граница для поля ввода */
+    
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50; /* Зеленый цвет кнопки */
+    color: #fff; /* Белый текст на зеленом фоне */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Изменение формы указателя при наведении */
+}
+
+    button:hover {
+        background-color: #45a049; /* Цвет кнопки при наведении */
+    }
+/* Стили для слова (метки) "Подпись к картинке" */
+label[for="caption"] {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333; /* Цвет текста метки */
+    /* Дополнительные стили, если необходимо */
+}
+label[for="imageLink"] {
+    display: block;
+    margin-bottom: 1px;
+    font-weight: bold;
+    color: #333; /* Цвет текста метки */
+}
+#caption {
+    width: 1120px;
+    padding: 105px;
+    margin: 20px auto;
+}
