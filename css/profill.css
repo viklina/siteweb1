@@ -1,0 +1,12 @@
+.start {
+    background-image: url(profil.png);
+    height: 3639px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+.startzakaz {
+    background-image: url(profzakaz.png);
+    height: 3639px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
