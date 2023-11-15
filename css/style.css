@@ -4,7 +4,7 @@ body {
 }
 
 .background-image {
-    background-image: url(Group11.jpg);
+    background-image: url(TEST.jpg);
     height: 3639px;
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -17,11 +17,12 @@ body {
 }
 
 .menu { /* расположение слов меню */
-    padding-top: 600px;
+
+    padding-top: 5vh; /* Используем высоту видимой области */
     display: flex;
     align-items: center;
-    margin-left: 290px;
-    gap: 331px;
+    margin-left: 18vw; /* Используем ширину видимой области */
+    gap: 25vw; /* Используем ширину видимой области */
 }
 .slovo { /* стиль слов меню */
     color: #362B3A;
@@ -31,7 +32,14 @@ body {
     cursor: pointer;
     position: relative;
 }
+.test {
+    padding-top: 1vh; /* Пример использования высоты видимой области */
+    display: flex;
+    align-items: center;
+    margin-left: 17vw; /* Пример использования ширины видимой области */
+    gap: 22vw; /* Пример использования ширины видимой области */
 
+}
 
 
 /* Стили для анимации при наведении */
@@ -77,160 +85,15 @@ body {
     clear: both;
 }
 
-.hover-text-one {
-    overflow: hidden;
-    margin: 0;
-    width: 100%;
-    list-style: none;
-    text-align: center;
-}
-
-    .hover-text-one figure {
-        position: relative;
-        z-index: 1;
-        display: inline-block;
-        overflow: hidden;
-        background: #527c82;
-        text-align: center;
-        cursor: pointer;
-    }
-
-        .hover-text-one figure img {
-            position: relative;
-            display: block;
-            min-height: 100%;
-            opacity: 0.8;
-        }
-
-        .hover-text-one figure figcaption {
-            padding: 2em;
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 1.25em;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
-
-            .hover-text-one figure figcaption::before,
-            .hover-text-one figure figcaption::after {
-                pointer-events: none;
-            }
-
-        .hover-text-one figure figcaption {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .hover-text-one figure h3 {
-            word-spacing: -0.15em;
-            font-weight: 300;
-        }
-
-            .hover-text-one figure h3 span {
-                font-weight: 800;
-            }
-
-        .hover-text-one figure h3,
-        .hover-text-one figure p {
-            margin: 0;
-        }
-
-        .hover-text-one figure p {
-            letter-spacing: 1px;
-            font-size: 68.5%;
-        }
-
-/* Эффект при наведении */
-figure.effect-text-three {
-    background: #527c82;
-}
-
-    figure.effect-text-three img {
-        width: -webkit-calc(100% + 20px);
-        width: calc(100% + 20px);
-        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-        transition: opacity 0.35s, transform 0.35s;
-        transform: scale(1.1);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
-
-    figure.effect-text-three:hover img {
-        opacity: 0.4;
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-    }
-
-    figure.effect-text-three figcaption {
-        text-align: left;
-    }
-
-    figure.effect-text-three h3 {
-        position: relative;
-        overflow: hidden;
-        padding: 0.5em 0;
-    }
-
-        figure.effect-text-three h3::after {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: #fff;
-            content: '';
-            -webkit-transition: -webkit-transform 0.35s;
-            transition: transform 0.35s;
-            -webkit-transform: translate3d(-100%,0,0);
-            transform: translate3d(-100%,0,0);
-        }
-
-    figure.effect-text-three:hover h3::after {
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-    }
-
-    figure.effect-text-three p {
-        padding: 1em 0;
-        opacity: 0;
-        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-        transition: opacity 0.35s, transform 0.35s;
-        -webkit-transform: translate3d(100%,0,0);
-        transform: translate3d(100%,0,0);
-    }
-
-    figure.effect-text-three:hover p {
-        opacity: 1;
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-    }
-
-
-
-/* Общие стили */
-*, *:after, *:before {
-    border-box;
-    box-sizing: border-box;
-}
-
-.clearfix:before, .clearfix:after {
-    content: '';
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
 .hover-text-to {
     overflow: hidden;
     margin: 0;
     width: 100%;
     list-style: none;
     text-align: center;
+    display: flex;
+   
+    margin-top:2300px; /* Подтолкнет контейнер вниз страницы */
 }
 
     .hover-text-to figure {
@@ -241,6 +104,9 @@ figure.effect-text-three {
         background: #527c82;
         text-align: center;
         cursor: pointer;
+        margin: 16px; /* Небольшие отступы между изображениями */
+        width: 30%; /* Пример использования процентов для ширины изображений */
+        
     }
 
         .hover-text-to figure img {
@@ -248,6 +114,8 @@ figure.effect-text-three {
             display: block;
             min-height: 100%;
             opacity: 0.8;
+            max-width: 100%; /* Устанавливаем максимальную ширину в 100% */
+            margin: 0 auto;
         }
 
         .hover-text-to figure figcaption {
@@ -290,6 +158,7 @@ figure.effect-text-three {
             letter-spacing: 1px;
             font-size: 68.5%;
         }
+
 
 /* Эффект при наведении */
 figure.effect-text-four {
@@ -357,10 +226,17 @@ figure.effect-text-four {
     }
 .button {
     position: absolute;
-    width: 492px; /* Увеличьте ширину кнопки в 1.5 раза */
-    height: 157.191px; /* Увеличьте высоту кнопки в 1.5 раза */
+    width: 10%; /* Ширина в процентах от ширины родительского блока */
+    height: auto; /* Высота автоматически подстраивается под содержимое */
     color: #D2E2D5;
-    top: 1300px;
-    left: 310px;
-    font-size: 1.5em; /* Увеличение размера текста в 1.5 раза */
+    top: 170vh; /* Расположение относительно высоты окна */
+    left: 20vw; /* Расположение относительно ширины окна */
+    font-size: 1.5em;
+}
+
+
+.ver {
+    width: 100%;
+    display: block;
+    margin: 0;
 }
