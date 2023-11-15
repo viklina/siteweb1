@@ -14,6 +14,19 @@
         </div>
 
     </div>
+    <form id="editorForm">
+        <label for="imageLink">Ссылка на картинку:</label>
+        <input type="text" id="imageLink" required>
 
+        <label for="caption">Подпись к картинке:</label>
+        <input type="text" id="caption" required>
+
+        <label for="image">Выберите изображение:</label>
+        <input type="file" id="image" accept="image/*" required>
+
+        <button type="button" onclick="publishPost()">Опубликовать</button>
+    </form>
+
+    <script src="publik.js"></script>
 </body>
 </html>

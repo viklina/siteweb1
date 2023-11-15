@@ -5,6 +5,7 @@ const fs = require('fs');
 const app = express();
 const jwt = require('jsonwebtoken');
 const path = require('path');
+const multer = require('multer');
 
 const PORT = 3000;
 
@@ -24,6 +25,40 @@ app.use((req, res, next) => {
     res.setHeader('Content-Security-Policy', "default-src 'self'; img-src * data:https://github.com/viklina/siteweb1.git");
     next();
 });
+
+
+const folderPath = 'uploads'; // Задайте путь к папке
+
+// Проверяем, существует ли папка
+if (!fs.existsSync(folderPath)) {
+    // Если не существует, создаем папку
+    fs.mkdirSync(folderPath);
+    console.log(`Папка '${folderPath}' успешно создана.`);
+} else {
+    console.log(`Папка '${folderPath}' уже существует.`);
+}
+// Используем Multer для обработки файлов
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/'); // Здесь файлы будут временно сохраняться
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+
+const upload = multer({ storage: storage });
+
+app.post('/upload', upload.single('image'), (req, res) => {
+    const { caption } = req.body;
+    const imagePath = path.join(__dirname, 'uploads', req.file.filename);
+
+    // Здесь вы можете сохранить данные (например, в базе данных) или что-то еще.
+
+    res.json({ message: 'Изображение успешно загружено и опубликовано!' });
+});
+
+
 
 
 app.post('/register', (req, res) => {
