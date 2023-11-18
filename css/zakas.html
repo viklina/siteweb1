@@ -1,32 +1,33 @@
-﻿<!DOCTYPE html>
+﻿<!-- zakas.html -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' http://localhost:3000;">
+    <title>Заказать</title>
     <link rel="stylesheet" href="profill.css">
 </head>
 <body>
-    <div class="startzakaz">
-        <div class="cont">
-            <!-- Ваш контент -->
-        </div>
+    <div class="form-container">
+        <form id="orderForm">
+            <label for="caption">Подпись:</label>
+            <input type="text" id="caption" name="caption" required>
 
+            <label for="image">Изображение (файл):</label>
+            <input type="file" id="image" name="image">
+
+            <label for="imageLink">Или изображение (ссылка):</label>
+            <input type="text" id="imageLink" name="imageLink">
+
+            <button type="button" id="submitBtn">Отправить</button>
+        </form>
     </div>
-    <form id="editorForm">
-        <label for="imageLink">Ссылка на картинку:</label>
-        <input type="text" id="imageLink" required>
-
-        <label for="caption">Подпись к картинке:</label>
-        <input type="text" id="caption" required>
-
-        <label for="image">Выберите изображение:</label>
-        <input type="file" id="image" accept="image/*" required>
-
-        <button type="button" onclick="publishPost()">Опубликовать</button>
-    </form>
-
-    <script src="publik.js"></script>
+    <script src="common.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("submitBtn").addEventListener("click", function () {
+                publishPost();
+            });
+        });
+    </script>
 </body>
 </html>

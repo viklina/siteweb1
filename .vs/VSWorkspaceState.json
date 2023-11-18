@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\css",
-    "\\images"
+    "\\uploads",
+    "\\views"
   ],
-  "SelectedNode": "\\css\\zakas.html",
+  "SelectedNode": "\\css\\common.js",
   "PreviewInSolutionExplorer": false
 }

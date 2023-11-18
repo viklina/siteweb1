@@ -1,38 +1,33 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=ege">
-    <meta name="vieport" content="width=divice-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>PROEKT</title>
-    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' http://localhost:3000/; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' http://localhost:3000;">
+    <title>Журнал</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="vxod.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap" rel="stylesheet">
-
+    <script src="publik.js"></script>
 </head>
 <body>
     <div class="gurnal">
         <div class="container1">
-            <a href="index.html">
-                <img src="..\images\naglavnuy.png">
-            </a>
+            <a href="index.html"></a>
         </div>
-        <div class="container2">
+        <div class="container2" id="journalEntries">
+            <!-- Вставка изображений будет осуществляться динамически через JavaScript -->
         </div>
         <div class="menu1">
-            <p><a class="voiti" href="registr.html">Зарегестрироваться</a></p>
-            <p> <a class="voiti" href="voyti.html">Войти</a></p>
+            <p><a class="voiti" href="registr.html">Зарегистрироваться</a></p>
+            <p><a class="voiti" href="voyti.html">Войти</a></p>
         </div>
     </div>
-    <script src="publik.js"></script>
+    <script src="common.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            const relativePathToUploads = 'http://localhost:3000/uploads';
+
+            // Вызываем функцию для отображения изображений только на странице gurnal.html
+            await displayImages(relativePathToUploads);
+        });
+    </script>
 </body>
 </html>
-
-

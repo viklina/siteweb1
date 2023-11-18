@@ -1,40 +1,15 @@
-function publishPost() {
-    var caption = document.getElementById("caption").value;
-    var imageInput = document.getElementById("image");
-    var imageFile = imageInput.files[0];
+document.addEventListener("DOMContentLoaded", function () {
+    // Проверяем, на какой странице мы находимся
+    const isGurnalPage = document.getElementById('journalEntries') !== null;
 
-    if (!caption || !imageFile) {
-        console.log("Заполните все поля для публикации");
-        return;
+    if (isGurnalPage) {
+        const relativePathToUploads = 'http://localhost:3000/uploads';
+        // Вызываем функцию для отображения изображений только на странице gurnal.html
+        displayImages(relativePathToUploads);
     }
 
-    var formData = new FormData();
-    formData.append('caption', caption);
-    formData.append('image', imageFile);
 
-    fetch('http://localhost:3000/upload', {
-        method: 'POST',
-        body: formData
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data); // Вывод ответа от сервера
-            // Дополнительные действия, если необходимо
-        })
-        .catch(error => console.error('Ошибка:', error));
-}
-fetch('http://localhost:3000/journal-entries') // Замените на ваш маршрут для получения данных
-    .then(response => response.json())
-    .then(entries => {
-        const journalEntriesElement = document.getElementById('journalEntries');
 
-        entries.forEach(entry => {
-            const entryElement = document.createElement('div');
-            entryElement.innerHTML = `
-                <img src="${entry.imagePath}" alt="${entry.caption}" style="max-width: 300px;">
-                <p>${entry.caption}</p>
-            `;
-            journalEntriesElement.appendChild(entryElement);
-        });
-    })
-    .catch(error => console.error('Ошибка:', error));
+
+
+});

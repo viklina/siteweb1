@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: http://* https://*; script-src 'nonce-<%= nonce %>';">
+    <!-- Другие мета-теги и стили -->
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="vxod.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap" rel="stylesheet">
+    <script nonce="<%= nonce %>" src="publik.js"></script>
+</head>
+<body>
+    <div class="gurnal">
+        <div class="container1">
+            <a href="index.html">
+                <img src="..\images\naglavnuy.png">
+            </a>
+        </div>
+        <div class="container2" id="journalEntries">
+            <!-- Вставка изображений будет осуществляться динамически через JavaScript -->
+        </div>
+        <div class="menu1">
+            <p><a class="voiti" href="registr.html">Зарегистрироваться</a></p>
+            <p><a class="voiti" href="voyti.html">Войти</a></p>
+        </div>
+    </div>
+</body>
+</html>
