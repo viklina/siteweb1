@@ -1,22 +1,27 @@
 [
   {
     "imagePath": "http://localhost:3000/uploads/POST1.jpg",
-    "caption": "1"
+    "caption": "1жшкопжщшфкоп",
+    "imageLink": "1"
   },
   {
     "imagePath": "http://localhost:3000/uploads/POST2.jpg",
-    "caption": "1"
+    "caption": "1жыкупшофжщшукоп",
+    "imageLink": "1"
   },
   {
     "imagePath": "http://localhost:3000/uploads/POST3.jpg",
-    "caption": "1"
+    "caption": "1жфщукшпожфщукшпо",
+    "imageLink": "1"
   },
   {
     "imagePath": "http://localhost:3000/uploads/POST4.jpg",
-    "caption": "1"
+    "caption": "1",
+    "imageLink": "1"
   },
   {
     "imagePath": "http://localhost:3000/uploads/POST5.jpg",
-    "caption": "1"
+    "caption": "1",
+    "imageLink": "1"
   }
 ]

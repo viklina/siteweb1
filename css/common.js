@@ -20,6 +20,24 @@ async function displayImages() {
                 entryElement.innerHTML = `
                     <img src="${imagePath}" alt="${entry.caption}" style="max-width: 100%; height: auto;">
                 `;
+                // Создаем элемент img для изображения
+                let imageElement = document.createElement('img');
+                imageElement.src = imagePath;
+                imageElement.alt = entry.caption;
+                imageElement.style.maxWidth = '100%';
+                imageElement.style.height = 'auto';
+
+                // Создаем элемент p для текстовой информации
+                let textElement = document.createElement('p');
+                textElement.textContent = entry.caption;
+                let linkElement = document.createElement('p');
+                linkElement.textContent = entry.imageLink;
+
+               
+                entryElement.appendChild(linkElement);
+                
+                entryElement.appendChild(textElement);
+
                 journalEntriesContainer.appendChild(entryElement);
             });
         } else {

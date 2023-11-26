@@ -3,7 +3,7 @@ const cors = require('cors');
 const fs = require('fs').promises;
 const multer = require('multer');
 const path = require('path');
-const jwt = require('jsonwebtoken'); // Don't forget to import jwt
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const PORT = 3000;
@@ -48,7 +48,10 @@ const upload = multer({ storage: storage });
 app.post('/upload', upload.single('image'), async (req, res) => {
     try {
         const imagePath = `${relativePathToUploads}/${req.file.filename}`;
-        const { caption } = req.body;
+        const { caption, imageLink } = req.body;
+        const newEntry = { imagePath, caption, imageLink };
+        entries.push(newEntry);
+
         const data = await fs.readFile(entriesFilePath, 'utf8');
         let entries = JSON.parse(data);
 
@@ -56,7 +59,7 @@ app.post('/upload', upload.single('image'), async (req, res) => {
             entries = [];
         }
 
-        const newEntry = { imagePath, caption };
+        const newEntry = { imagePath, caption, imageLink };
         entries.push(newEntry);
 
         await fs.writeFile(entriesFilePath, JSON.stringify(entries, null, 2));
