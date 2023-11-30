@@ -47,11 +47,6 @@ const upload = multer({ storage: storage });
 
 app.post('/upload', upload.single('image'), async (req, res) => {
     try {
-        const imagePath = `${relativePathToUploads}/${req.file.filename}`;
-        const { caption, imageLink } = req.body;
-        const newEntry = { imagePath, caption, imageLink };
-        entries.push(newEntry);
-
         const data = await fs.readFile(entriesFilePath, 'utf8');
         let entries = JSON.parse(data);
 
@@ -59,6 +54,8 @@ app.post('/upload', upload.single('image'), async (req, res) => {
             entries = [];
         }
 
+        const imagePath = `${relativePathToUploads}/${req.file.filename}`;
+        const { caption, imageLink } = req.body;
         const newEntry = { imagePath, caption, imageLink };
         entries.push(newEntry);
 
@@ -71,6 +68,7 @@ app.post('/upload', upload.single('image'), async (req, res) => {
         res.status(500).json({ message: 'Internal Server Error' });
     }
 });
+
 
 app.get('/gurnal.html', async (req, res) => {
     try {
