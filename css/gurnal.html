@@ -8,18 +8,26 @@
     <script src="publik.js"></script>
 </head>
 <body>
+    <div class="menu1">
+        <p><a class="voiti" href="registr.html">Зарегистрироваться</a></p>
+        <p><a class="voiti" href="voyti.html">Войти</a></p>
+    </div>
     <div class="gurnal">
         <div class="container1">
             <a href="index.html"></a>
         </div>
-        <div class="container2" id="journalEntries">
-            <!-- Вставка изображений будет осуществляться динамически через JavaScript -->
-        </div>
-        <div class="menu1">
-            <p><a class="voiti" href="registr.html">Зарегистрироваться</a></p>
-            <p><a class="voiti" href="voyti.html">Войти</a></p>
+        <div class="post">
+            <div class="post-text" id="journalEntries">
+                <!-- Вставка изображений будет осуществляться динамически через JavaScript -->
+            </div>
+            <div class="imageLink" id="journalEntries">
+            </div>
+            <div class="post-image" id="journalEntries">
+                <!-- Вставка изображений будет осуществляться динамически через JavaScript -->
+            </div>
         </div>
     </div>
+    
     <script src="common.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", async function () {
@@ -27,7 +35,10 @@
 
             // Вызываем функцию для отображения изображений только на странице gurnal.html
             await displayImages(relativePathToUploads);
+
         });
+
+
     </script>
 </body>
 </html>
