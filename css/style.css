@@ -4,7 +4,7 @@ body {
 }
 
 .background-image {
-    background-image: url(TEST.jpg);
+    background-image: url(Group11.jpg);
     height: 3639px;
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -25,7 +25,7 @@ body {
     gap: 25vw; /* »спользуем ширину видимой области */
 }
 .slovo { /* стиль слов меню */
-    color: #362B3A;
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 24px;
     font-weight: 700;
@@ -93,7 +93,7 @@ body {
     text-align: center;
     display: flex;
    
-    margin-top:2300px; /* ѕодтолкнет контейнер вниз страницы */
+    margin-top:2700px; /* ѕодтолкнет контейнер вниз страницы */
 }
 
     .hover-text-to figure {
@@ -228,8 +228,8 @@ figure.effect-text-four {
     position: absolute;
     width: 10%; /* Ўирина в процентах от ширины родительского блока */
     height: auto; /* ¬ысота автоматически подстраиваетс€ под содержимое */
-    color: #D2E2D5;
-    top: 170vh; /* –асположение относительно высоты окна */
+    color: #4B001E;
+    top: 180vh; /* –асположение относительно высоты окна */
     left: 20vw; /* –асположение относительно ширины окна */
     font-size: 1.5em;
 }

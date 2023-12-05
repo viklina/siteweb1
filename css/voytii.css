@@ -1,5 +1,5 @@
 .sign {
-	background-image: url(vxod.jpg);
+	background-image: url(Group35.jpg);
 	height: 100vh;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -15,30 +15,34 @@ form input {
 	margin-top: 11px;
 	border: none;
 	border-color: transparent;
+	border: 1px solid black; /* Черная рамка */
 }
 
-.knopka2 {
+#knopka2 {
 	margin-top: -100px;
 	border: none;
-	font-size: 110%;
-	background-color: #FF73B3;
-	margin-left: 450px;
+	font-size: 150%; /* Увеличение размера шрифта */
+	background-color: white;
+	padding: 15px 30px;
+	top: 525px;
+	left: 350px; /* Добавление внутренних отступов */
 }
 
 input:focus {
 	outline: none; /*  чтобы при клике на окно не было рамки */
 }
 
-#knopka2 button {
+#knopka2 {
 	border: none;
 	font-size: 110%;
-	background-color: #FF73B3;
-	margin-left: 480px;
+	background-color: #4B001E;
+	position: absolute;
+	
 }
 
-#knopka2:hover {
-	cursor: pointer;
-}
+	#knopka2:hover {
+		cursor: pointer;
+	}
 
 #submit1 {
 	color: white;

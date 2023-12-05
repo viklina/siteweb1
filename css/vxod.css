@@ -23,7 +23,7 @@ body {
 }
 /* окно войти */
 .registr {
-	background-image: url(registr.jpg);
+	background-image: url(Group48.jpg);
 	height: 100vh;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -53,10 +53,10 @@ input:focus {
 }
 #knopka1 button {
 	border: none;
-	font-size: 110%;
-	background-color: #FF73B3;
+	font-size: 120%;
+	background-color: #4B001E;
 	margin-left: 480px;
-
+	margin-top: 90px; /* Добавляем отступ сверху */
 }
 
 #knopka1:hover {

@@ -1,9 +1,11 @@
 .start {
-    background-image: url(profil.png);
-    height: 3639px;
+    background-image: url('profil.png');
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: cover; /* Изображение растягивается, чтобы покрыть весь контейнер */
+    height: auto; /* Позволяет контейнеру изменять высоту в зависимости от содержимого */
 }
+
+
 .startzakaz {
     background-image: url(profzakaz.png);
     height: 3639px;

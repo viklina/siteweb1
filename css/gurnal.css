@@ -1,0 +1,39 @@
+/* gurnal.css */
+
+/* Общий стиль для контейнера поста */
+.post {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+    /* Стили для изображений в посте */
+    .post img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    /* Стили для заголовка поста */
+    .post h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    /* Стили для текста поста */
+    .post p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+    /* Стили для ссылок в посте */
+    .post a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .post a:hover {
+            text-decoration: underline;
+        }
