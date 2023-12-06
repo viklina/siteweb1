@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' http://localhost:3000;">
     <title>Заказать</title>
     <link rel="stylesheet" href="profill.css">
+   
+    <script src="publik.js"></script>
 </head>
 <body>
     <div class="form-container">
@@ -13,12 +15,16 @@
             <input type="text" id="caption" name="caption" required>
 
             <label for="image">Изображение (файл):</label>
-            <input type="file" id="image" name="image">
+            <input type="file" id="imageLink" name="image">
 
             <label for="imageLink">Заголовок:</label>
-            <input type="text" id="imageLink" name="imageLink">
+            <input type="text" id="img" name="imageLink">
 
-            <button type="button" id="submitBtn">Отправить</button>
+
+        </form>
+        <form id="myForm">
+           
+            <button type="button" id="submitBtn" onclick="publishPost()">Опубликовать пост</button>
         </form>
     </div>
     <script src="common.js"></script>

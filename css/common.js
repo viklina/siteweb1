@@ -28,17 +28,17 @@ async function displayImages() {
                 imageElement.style.height = 'auto';
 
                 // Создаем элемент p для текстовой информации
-               
+
                 let textElement = document.createElement('p');
                 textElement.textContent = entry.caption;
                 let linkElement = document.createElement('p');
-                linkElement.textContent = entry.imageLink;  
+                linkElement.textContent = entry.imageLink;
                 textElement.style.marginRight = '100px';
-                linkElement.style.marginRight = '100px';
+                linkElement.style.marginRight = '10px';
 
-               
+
                 entryElement.appendChild(linkElement);
-                
+
                 entryElement.appendChild(textElement);
 
                 journalEntriesContainer.appendChild(entryElement);
@@ -53,6 +53,8 @@ async function displayImages() {
 
 // Функция для публикации поста
 async function publishPost() {
+    const formData = new FormData(document.querySelector('#myForm'));
+
     const captionInput = document.getElementById('caption');
     const imageLinkInput = document.getElementById('imageLink');
 
@@ -67,7 +69,7 @@ async function publishPost() {
     try {
         const response = await fetch('http://localhost:3000/upload', {
             method: 'POST',
-            body: formData,
+            body: myForm,
         });
 
         const result = await response.json();
@@ -89,7 +91,9 @@ async function publishPost() {
             // Добавляем элементы в ваш контейнер (например, #journalEntries)
             let journalEntriesContainer = document.getElementById('journalEntries');
             journalEntriesContainer.appendChild(textElement);
-            
+
+            console.log(myForm);
+
         }
 
     } catch (error) {

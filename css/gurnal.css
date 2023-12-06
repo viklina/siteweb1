@@ -17,12 +17,12 @@
     align-items: center;
 }
 
-.post-image img {
+.imagePath img {
     max-width: 40%;
     margin-right: 20px;
 }
 
-.post-text {
+.caption {
     flex-grow: 1;
     text-align: left;
 }

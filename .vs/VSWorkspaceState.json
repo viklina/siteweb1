@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\css",
-    "\\images",
-    "\\uploads"
+    "\\css"
   ],
-  "SelectedNode": "\\css\\vxod.css",
+  "SelectedNode": "\\server.js",
   "PreviewInSolutionExplorer": false
 }

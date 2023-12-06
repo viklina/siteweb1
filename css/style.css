@@ -16,21 +16,6 @@ body {
     background-size: 100% auto;
 }
 
-
-.caption {
-    position: relative;
-    left: 500px;
-    top: -10px;
-    color: #362B3A;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 700;
-    cursor: pointer;
-    position: relative;
-}
-
-
-
 .menu { /* расположение слов меню */
 
     padding-top: 5vh; /* Используем высоту видимой области */
@@ -272,4 +257,3 @@ figure.effect-text-four {
     display: block;
     margin: 0;
 }
-
