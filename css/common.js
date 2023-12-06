@@ -28,10 +28,13 @@ async function displayImages() {
                 imageElement.style.height = 'auto';
 
                 // Создаем элемент p для текстовой информации
+               
                 let textElement = document.createElement('p');
                 textElement.textContent = entry.caption;
                 let linkElement = document.createElement('p');
-                linkElement.textContent = entry.imageLink;
+                linkElement.textContent = entry.imageLink;  
+                textElement.style.marginRight = '100px';
+                linkElement.style.marginRight = '100px';
 
                
                 entryElement.appendChild(linkElement);
@@ -51,25 +54,14 @@ async function displayImages() {
 // Функция для публикации поста
 async function publishPost() {
     const captionInput = document.getElementById('caption');
-    const imageInput = document.getElementById('image');
     const imageLinkInput = document.getElementById('imageLink');
 
     const caption = captionInput.value;
-    const imageFile = imageInput.files[0];
     const imageLink = imageLinkInput.value;
 
-    if (!caption || (!imageFile && !imageLink)) {
+    if (!caption && !imageLink) {
         console.log('Заполните все поля для публикации');
         return;
-    }
-
-    const formData = new FormData();
-    formData.append('caption', caption);
-
-    if (imageFile) {
-        formData.append('image', imageFile);
-    } else {
-        formData.append('imageLink', imageLink);
     }
 
     try {
@@ -80,10 +72,24 @@ async function publishPost() {
 
         const result = await response.json();
         console.log(result);
+
         if (result.redirect) {
             window.location.href = result.redirect;
-            // После перенаправления вызываем displayImages для обновления отображения
-            await displayImages();
+
+            // Создаем элемент p для текстовой информации
+            let textElement = document.createElement('p');
+            textElement.textContent = caption;
+            textElement.classList.add('caption'); // Добавляем класс caption
+
+            // Создаем элемент p для ссылки
+            let linkElement = document.createElement('p');
+            linkElement.textContent = imageLink;
+            linkElement.classList.add('imageLink'); // Добавляем класс caption
+
+            // Добавляем элементы в ваш контейнер (например, #journalEntries)
+            let journalEntriesContainer = document.getElementById('journalEntries');
+            journalEntriesContainer.appendChild(textElement);
+            
         }
 
     } catch (error) {
