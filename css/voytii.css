@@ -1,5 +1,5 @@
 .sign {
-	background-image: url(Group51.jpg);
+	background-image: url(Group35.jpg);
 	height: 100vh;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -26,7 +26,6 @@ form input {
 	padding: 15px 30px;
 	top: 525px;
 	left: 350px; /* Добавление внутренних отступов */
-	left: 315px;
 }
 
 input:focus {
@@ -35,19 +34,11 @@ input:focus {
 
 #knopka2 {
 	border: none;
-	font-size: 120%; /* Увеличиваем размер шрифта */
+	font-size: 110%;
 	background-color: #4B001E;
 	position: absolute;
-	transition: background-color 0.3s ease; /* Добавляем анимацию для цвета фона */
-	width: 200px; /* Увеличиваем ширину кнопки */
-	height: 50px; /* Увеличиваем высоту кнопки */
-	border-radius: 10px; /* Делаем закругленные углы */
+	
 }
-
-	#knopka2:hover {
-		background-color: #8E0139; /* Новый цвет фона при наведении */
-	}
-
 
 	#knopka2:hover {
 		cursor: pointer;

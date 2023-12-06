@@ -3,6 +3,8 @@
 # Создано https://www.toptal.com/developers/gitignore/api/windows
 # Редактировать в https://www.toptal.com/developers/gitignore?templates=windows
 
+.vs
+
 ### Windows ###
 # Файлы кэша миниатюр Windows
 Thumbs.db

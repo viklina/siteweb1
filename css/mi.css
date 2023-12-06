@@ -4,3 +4,49 @@
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 }
+
+/* Стили для кнопки "На главную" */
+.button {
+	position: fixed;
+	top: 20px; /* Отступ от верхнего края */
+	right: 20px; /* Отступ от правого края */
+	padding: 10px 20px; /* Параметры отступов кнопки */
+	background-color: #333; /* Цвет фона кнопки */
+	border: 1px solid #555; /* Обводка кнопки */
+	border-radius: 5px; /* Закругление углов */
+	cursor: pointer; /* Изменение курсора при наведении */
+	color: #f0f0f0; /* Цвет текста кнопки */
+	font-size: 18px; /* Размер текста кнопки */
+	text-transform: uppercase; /* Преобразование текста в верхний регистр */
+	letter-spacing: 1px; /* Расстояние между буквами */
+	box-shadow: 0 0 0 rgba(255, 255, 255, 0.7); /* Тень кнопки */
+	transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out; /* Плавное изменение тени и цвета текста */
+	/* Добавим анимацию */
+	animation-name: pulse;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+/* Анимация */
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+	}
+
+	50% {
+		transform: scale(1.05);
+		box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+	}
+
+	100% {
+		transform: scale(1);
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+	}
+}
+
+/* Стили для текста кнопки при наведении */
+.button:hover {
+	color: #ddd; /* Изменение цвета текста при наведении */
+}
