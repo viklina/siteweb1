@@ -23,7 +23,7 @@ body {
 }
 /* окно войти */
 .registr {
-	background-image: url(Group48.jpg);
+	background-image: url(Group52.jpg);
 	height: 100vh;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -36,10 +36,12 @@ form input {
 	border: 1px solid #E5E9F5;
 	background-color: white;
 	padding: 15px;
-	margin-top: 11px;
+	margin-top: 20px; /* Increase the top margin */
 	border: none;
 	border-color: transparent;
+	height: 40px; /* Adjust the height as needed */
 }
+
 .knopka {
 	margin-top: -100px;
 	border: none;

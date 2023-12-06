@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log(data); // Вывод ответа от сервера
                     if (data.message === 'Пользователь зарегистрирован') {
                         // Здесь можете выполнить дополнительные действия после регистрации
-                        console.log("Пользователь зарегистрирован успешно!");
+                        //console.log("Пользователь зарегистрирован успешно!");
+                        window.location.href = 'test.html';
                     }
                     if (data.token) {
                         console.log("Токен:", data.token);

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     document.getElementById("knopka2").addEventListener("click", function (event) {
         event.preventDefault();
 
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             window.location.href = data.redirect;
                         } else {
                             // В противном случае, перенаправляем на стандартную страницу
-                            window.location.href = 'profil.html';
+                            window.location.href = 'test.html'; //profil.html
                         }
                     } else {
                         console.log("Ошибка входа, проверьте правильность введенных данных");

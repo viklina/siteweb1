@@ -25,5 +25,13 @@
   {
     "imagePath": "http://localhost:3000/uploads/44.jpg",
     "caption": "ФУКЕН"
+  },
+  {
+    "imagePath": "http://localhost:3000/uploads/0.jpg",
+    "caption": "123"
+  },
+  {
+    "imagePath": "http://localhost:3000/uploads/10.jpg",
+    "caption": "123456"
   }
 ]

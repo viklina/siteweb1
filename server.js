@@ -5,6 +5,7 @@ const multer = require('multer');
 const path = require('path');
 const jwt = require('jsonwebtoken');
 
+
 const app = express();
 const PORT = 3000;
 
@@ -146,7 +147,7 @@ app.post('/login', (req, res) => {
                 if (user.name === 'Денис' && user.mail === 'webtehnologi@gmail.com' && user.password === 'CIS27plethud') {
                     res.json({ token, redirect: 'zakas.html' });
                 } else {
-                    res.json({ token, redirect: 'profil.html' });
+                    res.json({ token, redirect: 'test.html' });
                 }
             } else {
                 res.status(401).json({ message: 'Authentication error' });
