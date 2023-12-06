@@ -1,0 +1,7 @@
+body {
+    /* Другие свойства */
+    background-image: url('Group42.jpg');
+    /* Дополнительные параметры */
+    background-size: cover; /* Растягивает картинку на весь экран */
+    background-repeat: no-repeat; /* Запрещает повторение картинки */
+}
