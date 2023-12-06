@@ -239,32 +239,15 @@ figure.effect-text-four {
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
     }
-/* Стили для кнопки "РЕГИСТРАЦИЯ" */
 .button {
     position: absolute;
-    width: 10%;
-    height: auto;
+    width: 10%; /* Ширина в процентах от ширины родительского блока */
+    height: auto; /* Высота автоматически подстраивается под содержимое */
     color: #4B001E;
-    top: 350vh;
-    left: 42vw;
+    top: 180vh; /* Расположение относительно высоты окна */
+    left: 20vw; /* Расположение относительно ширины окна */
     font-size: 1.5em;
 }
-
-.button-link {
-    text-decoration: none;
-    color: #4B001E;
-    display: inline-block;
-    padding: 10px 20px;
-    border: 1px solid #4B001E;
-    border-radius: 5px;
-    transition: transform 0.3s ease-in-out;
-}
-
-    /* Анимация для кнопки увеличения размера при наведении */
-    .button-link:hover {
-        transform: scale(1.1);
-    }
-
 
 
 .ver {

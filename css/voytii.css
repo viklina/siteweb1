@@ -8,18 +8,18 @@
 /* расположение полей регистрации */
 form input {
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	border: 1px solid #E5E9F5;
 	background-color: white;
-	padding: 20px;
-	margin-top: 21px;
+	padding: 15px;
+	margin-top: 11px;
 	border: none;
 	border-color: transparent;
 	border: 1px solid black; /* Черная рамка */
 }
 
 #knopka2 {
-	margin-top: -30px;
+	margin-top: -100px;
 	border: none;
 	font-size: 150%; /* Увеличение размера шрифта */
 	background-color: white;
