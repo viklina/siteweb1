@@ -107,31 +107,35 @@ app.get('/gurnal.html', async (req, res) => {
 
 
 
+
 app.post('/register', async (req, res) => {
     try {
         const { name, mail, password } = req.body;
         const newUser = { name, mail, password };
 
-        if (!fs.existsSync('users.json')) {
-            fs.writeFileSync('users.json', '[]');
+        try {
+            // Используем асинхронный метод для проверки существования файла
+            await fs.access('users.json');
+        } catch (error) {
+            // Если файл не существует, создаем пустой файл
+            await fs.writeFile('users.json', '[]');
         }
 
         const data = await fs.readFile('users.json', 'utf8');
         const existingUsers = JSON.parse(data);
 
-        // Your validation logic goes here
+        // Ваша логика валидации
 
         existingUsers.push(newUser);
 
         await fs.writeFile('users.json', JSON.stringify(existingUsers, null, 2));
 
-        res.json({ message: 'User registered successfully' });
+        res.json({ message: 'User registered successfully', redirect: 'test.html' });
     } catch (error) {
         console.error('Error during registration:', error);
         res.status(500).json({ message: 'Internal Server Error' });
     }
 });
-
 app.post('/login', (req, res) => {
     const { mail, password } = req.body;
 

@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (data.message === 'Пользователь зарегистрирован') {
                         // Здесь можете выполнить дополнительные действия после регистрации
                         //console.log("Пользователь зарегистрирован успешно!");
-                        window.location.href = 'test.html';
+                        window.location.href = data.redirect;
                     }
                     if (data.token) {
                         console.log("Токен:", data.token);
