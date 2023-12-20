@@ -1,38 +1,34 @@
 function showResult() {
-    // Получение формы
     const form = document.querySelector('form');
 
-    // Обработка события отправки формы
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        // Получение всех выбранных ответов
-        const answers = {
-            question1: document.querySelector('input[name="question1"]:checked').value,
-            question2: document.querySelector('input[name="question2"]:checked').value,
-            question3: document.querySelector('input[name="question3"]:checked').value,
-            question4: document.querySelector('input[name="question4"]:checked').value,
-            question5: document.querySelector('input[name="question5"]:checked').value,
-            question6: document.querySelector('input[name="question6"]:checked').value,
-            question7: document.querySelector('input[name="question7"]:checked').value,
-            question8: document.querySelector('input[name="question8"]:checked').value,
-            question9: document.querySelector('input[name="question9"]:checked').value,
-            question10: document.querySelector('input[name="question10"]:checked').value,
-        };
+        const answers = {};
 
-        // Подсчет количества выбранных вариантов для каждой буквы
+        // Получение ответов на вопросы
+        for (let i = 1; i <= 10; i++) {
+            const questionName = `question${i}`;
+            const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+
+            if (selectedOption) {
+                answers[questionName] = selectedOption.value;
+            } else {
+                alert(`Пожалуйста, ответьте на вопрос ${i}.`);
+                return; // Прерываем выполнение функции, если не все вопросы отвечены
+            }
+        }
+
         const counts = {
             a: 0,
             b: 0,
             c: 0,
             d: 0,
         };
-
         // Подсчет количества ответов для каждой буквы
         for (const answer in answers) {
             counts[answers[answer]]++;
         }
-
         // Определение результата и вывод
         let resultText = '';
         // Пример логики для вывода результата в зависимости от большего количества ответов под определенной буквой
@@ -52,20 +48,15 @@ function showResult() {
             resultText = "Работа в сфере кибербезопасности подходит вам, если вы заинтересованы в знаниях о сетевых уязвимостях, шифровании, мониторинге и реагировании на киберугрозы. Это требует умения распознавать угрозы, защищать данные и обеспечивать надежность в цифровой среде.Вы можете пройти эти курсы по кибербезопасности https://skillbox.ru/course/profession-cybersecurity/?ysclid=lpsw78dky2546949142 Вы разовьёте аналитическое мышление, научитесь искать уязвимости и обеспечивать безопасность IT-систем. Освоите востребованную профессию даже с нулевым опытом в IT.";
         }
 
-        // Вывод результата
         const resultElement = document.getElementById('resultText');
-        if (resultElement) {
-            resultElement.textContent = resultText;
-        } else {
-            console.error('Элемент resultText не найден.');
-        }
-
-        // Отображение результата
         const resultDiv = document.getElementById('result');
-        if (resultDiv) {
+
+        // Проверяем, ответили ли на все вопросы, прежде чем отображать результат
+        if (Object.keys(answers).length === 10 && resultElement && resultDiv) {
+            resultElement.textContent = resultText;
             resultDiv.style.display = 'block';
         } else {
-            console.error('Элемент result не найден.');
+            console.error('Не все вопросы были отвечены, результат не может быть отображен.');
         }
     });
 }

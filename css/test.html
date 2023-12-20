@@ -71,6 +71,8 @@
             border-radius: 4px;
             cursor: pointer;
         }
+        topLeftButton {
+
 
             button:hover {
                 background-color: #0056b3;
@@ -82,6 +84,9 @@
     </style>
 </head>
 <body>
+    <a href="index.html">
+        <button id="topLeftButton">На главную</button>
+    </a>
     <!-- Здесь размещается содержимое вашей страницы -->
     <form id="quizForm">
         <div>
@@ -170,7 +175,13 @@
 
         <button type="submit" id="knopka" onclick="showResult()">Узнать результат</button>
     </form>
+    <!-- Элемент для вывода результата -->
+    <div id="result" style="display: none;">
+        <p id="resultText"></p>
+    </div>
 
+    <!-- Отображение ошибок для неотвеченных вопросов -->
+    <div id="errorMessages"></div>
 </body>
 
 </html>

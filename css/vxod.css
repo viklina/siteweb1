@@ -23,7 +23,7 @@ body {
 }
 /* окно войти */
 .registr {
-	background-image: url(Group52.jpg);
+	background-image: url(Group53.jpg);
 	height: 100vh;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -43,11 +43,11 @@ form input {
 }
 
 .knopka {
-	margin-top: -100px;
+	margin-top: 90px;
 	border: none;
-	font-size: 110%;
+	font-size: 120%;
 	background-color: #FF73B3;
-	margin-left: 450px;
+	margin-left: 420px;
 
 }
 input:focus {
@@ -57,9 +57,18 @@ input:focus {
 	border: none;
 	font-size: 120%;
 	background-color: #4B001E;
-	margin-left: 480px;
-	margin-top: 90px; /* Добавляем отступ сверху */
+	margin-left: 300px;
+	margin-top: 20px;
+	padding: 15px 30px; /* Изменяем размер кнопки */
+	border-radius: 10px; /* Делаем закругленные углы */
+	transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+	#knopka1 button:hover {
+		background-color: #8B005D;
+		transform: scale(1.1); /* Увеличиваем размер при наведении */
+	}
+
 
 #knopka1:hover {
 	cursor: pointer;
